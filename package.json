@@ -1,0 +1,26 @@
+{
+  "name": "rabbitmq",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsx watch src/index.ts",
+    "build": "tsup src",
+    "start_consumer": "tsx watch src/consumer.ts",
+    "start_producer": "tsx watch src/producer.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.10.3",
+    "dotenv": "^16.4.5",
+    "tsup": "^8.0.2"
+  },
+  "devDependencies": {
+    "@types/amqplib": "^0.10.5",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.3"
+  }
+}

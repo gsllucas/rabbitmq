@@ -1,0 +1,13 @@
+version: '3.5'
+
+services:
+  rabbitmq:
+    container_name: rabbitmq_container
+    # management version image brings a visual interface to interact and analyse rabbitmq
+    image: rabbitmq:3.11.26-management
+    ports:
+      - 5672:5672 # rabbitmq ports
+      - 15672:15672 # web interface ports
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin
