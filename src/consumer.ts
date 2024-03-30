@@ -11,7 +11,7 @@ export async function createAMQPConsumer() {
     if (!payload) return;
     console.log(getConsumerPayload(payload));
     await sleep();
-    channel.ack(payload!);
+    channel.ack(payload);
   });
 }
 
