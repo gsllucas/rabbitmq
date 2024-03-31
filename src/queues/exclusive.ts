@@ -16,7 +16,7 @@ export async function createAMQPExclusiveQueue() {
   channel.consume('exclusive_queue', async (payload) => {
     if (!payload) return;
     const parsedPayload = getConsumerPayload(payload);
-    console.log(`${parsedPayload.message} = ${parsedPayload.i}`);
+    console.log(`${parsedPayload.message} - ${parsedPayload.i}`);
     await sleep();
     channel.ack(payload);
   });
