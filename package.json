@@ -13,7 +13,8 @@
     "start_exchange": "tsx watch src/exchange.ts",
     "start_topic_exchange": "tsx watch src/topic-exchange.ts",
     "start_durable_queue": "tsx watch src/queues/durable.ts",
-    "start_max_priority_queue": "tsx watch src/queues/max-priority.ts"
+    "start_max_priority_queue": "tsx watch src/queues/max-priority.ts",
+    "start_exclusive_queue": "tsx watch src/queues/exclusive.ts"
   },
   "keywords": [],
   "author": "",
