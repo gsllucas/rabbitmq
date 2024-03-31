@@ -14,7 +14,10 @@
     "start_topic_exchange": "tsx watch src/topic-exchange.ts",
     "start_durable_queue": "tsx watch src/queues/durable.ts",
     "start_max_priority_queue": "tsx watch src/queues/max-priority.ts",
-    "start_exclusive_queue": "tsx watch src/queues/exclusive.ts"
+    "start_exclusive_queue": "tsx watch src/queues/exclusive.ts",
+    "start_auto_delete_queue": "tsx watch src/queues/auto-delete.ts",
+    "start_ttl_queue": "tsx watch src/queues/ttl.ts",
+    "start_max_length_queue": "tsx watch src/queues/max-length.ts"
   },
   "keywords": [],
   "author": "",
