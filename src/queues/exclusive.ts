@@ -5,13 +5,14 @@ import { randomUUID } from 'crypto';
 import { toBuffer } from '../utils/toBuffer';
 
 // Exclusive queue, it allows to consume messages with only the same declared channel
+// When channel is disconnect, it removes the remaining queues
 export async function createAMQPExclusiveQueue() {
   const connection = await getAMQPConnection();
   const channel = await connection.createChannel();
 
-  channel.assertQueue('exclusive_queue', { exclusive: true });
+  await channel.assertQueue('exclusive_queue', { exclusive: true });
 
-  channel.prefetch(5);
+  await channel.prefetch(5);
 
   channel.consume('exclusive_queue', async (payload) => {
     if (!payload) return;
