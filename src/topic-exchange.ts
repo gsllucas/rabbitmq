@@ -1,5 +1,5 @@
 import { getAMQPConnection } from './amqp-connection';
-import { asBuffer } from './utils/asBuffer';
+import { toBuffer } from './utils/toBuffer';
 
 export async function createAMQPTopicExchange() {
   const connection = await getAMQPConnection();
@@ -11,8 +11,8 @@ export async function createAMQPTopicExchange() {
   const routingKeyPattern = 'system.#';
   channel.bindQueue('system_logs_queue', 'topic_exchange', routingKeyPattern);
 
-  const errorLogPayload = asBuffer(JSON.stringify({ message: 'Error log' }));
-  const successLogPayload = asBuffer(
+  const errorLogPayload = toBuffer({ message: 'Error log' });
+  const successLogPayload = toBuffer(
     JSON.stringify({ message: 'Success log' })
   );
 
