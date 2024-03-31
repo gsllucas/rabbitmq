@@ -1,5 +1,5 @@
 import { getAMQPConnection } from './amqp-connection';
-import { asBuffer } from './utils/asBuffer';
+import { toBuffer } from './utils/toBuffer';
 
 export async function createAMQPExchange() {
   const connection = await getAMQPConnection();
@@ -20,7 +20,7 @@ export async function createAMQPExchange() {
   channel.publish(
     bindedQueue.exchange,
     bindedQueue.routingKey,
-    asBuffer(JSON.stringify({ message: 'Payload sent from an exchange' }))
+    toBuffer(JSON.stringify({ message: 'Payload sent from an exchange' }))
   );
 }
 
